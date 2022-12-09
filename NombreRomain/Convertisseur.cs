@@ -22,6 +22,7 @@ namespace NombreRomain
                 20 => "XX",
                 21 => "XXI",
                 22 => "XXII",
+                23 => "XXIII",
                 _ => new NotImplementedException()
             };
         }
