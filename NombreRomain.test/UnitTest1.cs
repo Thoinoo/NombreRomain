@@ -51,7 +51,22 @@ namespace NombreRomain.test
             // ALORS on obtient V avec n-5 nombre de I
             Assert.Equal(resultat, resultatAttendu);
         }
-        
+
+
+        [Fact]
+        public void Test9()
+        {
+            // ETANT DONNE le chiffre 9
+            var chiffre = 9;
+
+            // QUAND on l'envoi à convertir
+            var resultat = Convertisseur.convertir(chiffre);
+            string resultatAttendu = new string("IX");
+
+            // ALORS on obtient IX
+            Assert.Equal(resultat, resultatAttendu);
+        }
+
 
     }
 }
