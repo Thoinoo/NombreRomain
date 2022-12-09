@@ -13,10 +13,7 @@
                 4 => "IV",
                 <= 8 => "V" + new string('I', chiffre - 5),
                 9=> "IX",
-                10 => "X",
-                11 => "XI",
-                12 => "XII",
-                13 => "XIII",
+                <= 13 => "X" + new string('I', chiffre - 10),
                 _ => new NotImplementedException()
             };
         }
