@@ -1,3 +1,4 @@
+using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
@@ -13,7 +14,15 @@ namespace NombreRomain.test
         };
 
         public static IEnumerable<object[]> symboleAvecUnite = SymbolesAvecUnite();
+        public static IEnumerable<object[]> predecesseur = Predecesseur();
 
+        public static IEnumerable<object[]> Predecesseur()
+        {
+            foreach (var (chiffre, symbole) in Symboles)
+            {
+                yield return new object[] { chiffre - 1, symbole };
+            }
+        }
         public static IEnumerable<object[]> SymbolesAvecUnite()
         {
             foreach (var (chiffre, symbole) in Symboles)
@@ -44,36 +53,23 @@ namespace NombreRomain.test
             Assert.Equal(resultat, resultatAttendu);
         }
 
-        [Fact]
-        public void Test4()
+
+        
+
+        [Theory]
+        [MemberData(nameof(predecesseur))]
+        public void TestSymbolesPredecesseur(int n, string symbole)
         {
-            // ETANT DONNE le chiffre 4
-            var chiffre = 4;
+            // ETANT DONNE un nombre entre multiple de 5 auquel on soustrait 1
+            var chiffre = n;
 
             // QUAND on l'envoi à convertir
             var resultat = Convertisseur.convertir(chiffre);
-            string resultatAttendu = new string("IV");
+            string resultatAttendu = symbole.Remove(symbole.Length - 1) + "I" + symbole[symbole.Length - 1];
 
-            // ALORS on obtient IV
+            // ALORS on obtient son symbole avec un I en avant dernière position
             Assert.Equal(resultat, resultatAttendu);
         }
-
-
-
-        [Fact]
-        public void Test9()
-        {
-            // ETANT DONNE le chiffre 9
-            var chiffre = 9;
-
-            // QUAND on l'envoi à convertir
-            var resultat = Convertisseur.convertir(chiffre);
-            string resultatAttendu = new string("IX");
-
-            // ALORS on obtient IX
-            Assert.Equal(resultat, resultatAttendu);
-        }
-
 
         [Theory]
         [MemberData(nameof(symboleAvecUnite))]
@@ -89,6 +85,8 @@ namespace NombreRomain.test
             // ALORS on obtient son symbole sans unité, auquel on ajoute ( valeur - valeur sans unité ) fois I
             Assert.Equal(resultat, resultatAttendu);
         }
+
+        
 
 
 
