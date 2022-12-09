@@ -116,6 +116,21 @@ namespace NombreRomain.test
         }
 
 
+        [Fact]
+        public void Test21()
+        {
+            // ETANT DONNE le nombre 21
+            var chiffre = 21;
+
+            // QUAND on l'envoi à convertir
+            var resultat = Convertisseur.convertir(chiffre);
+            string resultatAttendu = "XXI";
+
+            // ALORS on obtient XXI
+            Assert.Equal(resultat, resultatAttendu);
+        }
+
+
 
 
 
