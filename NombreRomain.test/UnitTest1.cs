@@ -11,7 +11,8 @@ namespace NombreRomain.test
         {
             (5, "V"),
             (10, "X"),
-            (15, "XV")
+            (15, "XV"),
+            (20, "XX")
         };
 
         public static IEnumerable<object[]> symboleAvecUnite = SymbolesAvecUnite();
@@ -86,77 +87,7 @@ namespace NombreRomain.test
             // ALORS on obtient son symbole sans unité, auquel on ajoute ( valeur - valeur sans unité ) fois I
             Assert.Equal(resultat, resultatAttendu);
         }
-
-        [Fact]
-        public void Test19()
-        {
-            // ETANT DONNE le nombre 19
-            var chiffre = 19;
-
-            // QUAND on l'envoi à convertir
-            var resultat = Convertisseur.convertir(chiffre);
-            string resultatAttendu = "XIX";
-
-            // ALORS on obtient XIX
-            Assert.Equal(resultat, resultatAttendu);
-        }
-
-        [Fact]
-        public void Test20()
-        {
-            // ETANT DONNE le nombre 20
-            var chiffre = 20;
-
-            // QUAND on l'envoi à convertir
-            var resultat = Convertisseur.convertir(chiffre);
-            string resultatAttendu = "XX";
-
-            // ALORS on obtient XX
-            Assert.Equal(resultat, resultatAttendu);
-        }
-
-
-        [Fact]
-        public void Test21()
-        {
-            // ETANT DONNE le nombre 21
-            var chiffre = 21;
-
-            // QUAND on l'envoi à convertir
-            var resultat = Convertisseur.convertir(chiffre);
-            string resultatAttendu = "XXI";
-
-            // ALORS on obtient XXI
-            Assert.Equal(resultat, resultatAttendu);
-        }
-
-        [Fact]
-        public void Test22()
-        {
-            // ETANT DONNE le nombre 22
-            var chiffre = 22;
-
-            // QUAND on l'envoi à convertir
-            var resultat = Convertisseur.convertir(chiffre);
-            string resultatAttendu = "XXII";
-
-            // ALORS on obtient XXII
-            Assert.Equal(resultat, resultatAttendu);
-        }
-
-        [Fact]
-        public void Test23()
-        {
-            // ETANT DONNE le nombre 23
-            var chiffre = 23;
-
-            // QUAND on l'envoi à convertir
-            var resultat = Convertisseur.convertir(chiffre);
-            string resultatAttendu = "XXIII";
-
-            // ALORS on obtient XXIII
-            Assert.Equal(resultat, resultatAttendu);
-        }
+        
 
 
 
