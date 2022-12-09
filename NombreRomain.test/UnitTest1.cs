@@ -86,8 +86,20 @@ namespace NombreRomain.test
             Assert.Equal(resultat, resultatAttendu);
         }
 
-        
 
+        [Fact]
+        public void Test14()
+        {
+            // ETANT DONNE le nombre 14
+            var chiffre = 14;
+
+            // QUAND on l'envoi à convertir
+            var resultat = Convertisseur.convertir(chiffre);
+            string resultatAttendu = "XIV";
+
+            // ALORS on obtient son symbole sans unité, auquel on ajoute ( valeur - valeur sans unité ) fois I
+            Assert.Equal(resultat, resultatAttendu);
+        }
 
 
 

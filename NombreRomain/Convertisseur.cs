@@ -14,6 +14,7 @@
                 <= 8 => "V" + new string('I', chiffre - 5),
                 9=> "IX",
                 <= 13 => "X" + new string('I', chiffre - 10),
+                14 => "XIV",
                 _ => new NotImplementedException()
             };
         }
