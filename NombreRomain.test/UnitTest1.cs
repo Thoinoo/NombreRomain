@@ -9,9 +9,10 @@ namespace NombreRomain.test
             uint chiffre = 1;
 
             // QUAND on l'envoi à convertir
-            var resultat = NombreRomain.convertir(chiffre);
+            var resultat = Convertisseur.convertir(chiffre);
 
             // ALORS on obtient I
+            Assert.Equal(resultat, "I");
         }
     }
 }
