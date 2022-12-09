@@ -14,6 +14,10 @@
             {
                 return "IV";
             }
+            if (chiffre == 5)
+            {
+                return "V";
+            }
 
             return new NotImplementedException();
 

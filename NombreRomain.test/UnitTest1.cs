@@ -30,7 +30,21 @@ namespace NombreRomain.test
             var resultat = Convertisseur.convertir(chiffre);
             string resultatAttendu = new string("IV");
 
-            // ALORS on obtient n fois I
+            // ALORS on obtient IV
+            Assert.Equal(resultat, resultatAttendu);
+        }
+
+        [Fact]
+        public void Test5()
+        {
+            // ETANT DONNE le le chiffre 5
+            var chiffre = 5;
+
+            // QUAND on l'envoi à convertir
+            var resultat = Convertisseur.convertir(chiffre);
+            string resultatAttendu = new string("V");
+
+            // ALORS on obtient V
             Assert.Equal(resultat, resultatAttendu);
         }
 
