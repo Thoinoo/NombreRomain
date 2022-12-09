@@ -48,5 +48,19 @@ namespace NombreRomain.test
             Assert.Equal(resultat, resultatAttendu);
         }
 
+        [Fact]
+        public void Test6()
+        {
+            // ETANT DONNE le le chiffre 6
+            var chiffre = 6;
+
+            // QUAND on l'envoi à convertir
+            var resultat = Convertisseur.convertir(chiffre);
+            string resultatAttendu = new string("VI");
+
+            // ALORS on obtient VI
+            Assert.Equal(resultat, resultatAttendu);
+        }
+
     }
 }

@@ -10,19 +10,13 @@
                 return new string('I', chiffre);
             }
 
-            if (chiffre == 4)
+            return chiffre switch
             {
-                return "IV";
-            }
-            if (chiffre == 5)
-            {
-                return "V";
-            }
-
-            return new NotImplementedException();
-
-            
-            
+                4 => "IV",
+                5 => "V",
+                6=> "VI",
+                _ => new NotImplementedException()
+            };
         }
     }
 }
