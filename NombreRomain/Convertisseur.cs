@@ -4,7 +4,16 @@
     {
         public static object convertir(uint chiffre)
         {
-            return "I";
+            switch (chiffre)
+            {
+                case 1:
+                    return "I";
+                case 2:
+                    return "II";
+                default:
+                    return new NotImplementedException();
+            }
+            
         }
     }
 }

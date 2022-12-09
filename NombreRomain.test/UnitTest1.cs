@@ -14,5 +14,18 @@ namespace NombreRomain.test
             // ALORS on obtient I
             Assert.Equal(resultat, "I");
         }
+
+        [Fact]
+        public void Test2()
+        {
+            // ETANT DONNE le chiffre 2
+            uint chiffre = 2;
+
+            // QUAND on l'envoi à convertir
+            var resultat = Convertisseur.convertir(chiffre);
+
+            // ALORS on obtient I
+            Assert.Equal(resultat, "II");
+        }
     }
 }
