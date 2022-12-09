@@ -15,10 +15,7 @@
                 9=> "IX",
                 <= 13 => "X" + new string('I', chiffre - 10),
                 14 => "XIV",
-                15 => "XV",
-                16 => "XVI",
-                17 => "XVII",
-                18 => "XVII",
+                <= 18 => "XV" + new string('I', chiffre - 15),
                 _ => new NotImplementedException()
             };
         }
