@@ -10,7 +10,8 @@ namespace NombreRomain.test
         private static IEnumerable<(int chiffre, string symbole)> Symboles => new[]
         {
             (5, "V"),
-            (10, "X")
+            (10, "X"),
+            (15, "XV")
         };
 
         public static IEnumerable<object[]> symboleAvecUnite = SymbolesAvecUnite();
@@ -100,63 +101,7 @@ namespace NombreRomain.test
             // ALORS on obtient XIV
             Assert.Equal(resultat, resultatAttendu);
         }
-
-        [Fact]
-        public void Test15()
-        {
-            // ETANT DONNE le nombre 15
-            var chiffre = 15;
-
-            // QUAND on l'envoi à convertir
-            var resultat = Convertisseur.convertir(chiffre);
-            string resultatAttendu = "XV";
-
-            // ALORS on obtient XV
-            Assert.Equal(resultat, resultatAttendu);
-        }
-
-        [Fact]
-        public void Test16()
-        {
-            // ETANT DONNE le nombre 16
-            var chiffre = 16;
-
-            // QUAND on l'envoi à convertir
-            var resultat = Convertisseur.convertir(chiffre);
-            string resultatAttendu = "XVI";
-
-            // ALORS on obtient XVI
-            Assert.Equal(resultat, resultatAttendu);
-        }
-
-        [Fact]
-        public void Test17()
-        {
-            // ETANT DONNE le nombre 17
-            var chiffre = 17;
-
-            // QUAND on l'envoi à convertir
-            var resultat = Convertisseur.convertir(chiffre);
-            string resultatAttendu = "XVII";
-
-            // ALORS on obtient XVII
-            Assert.Equal(resultat, resultatAttendu);
-        }
-
-        [Fact]
-        public void Test18()
-        {
-            // ETANT DONNE le nombre 18
-            var chiffre = 18;
-
-            // QUAND on l'envoi à convertir
-            var resultat = Convertisseur.convertir(chiffre);
-            string resultatAttendu = "XVIII";
-
-            // ALORS on obtient XVIII
-            Assert.Equal(resultat, resultatAttendu);
-        }
-
+        
 
 
 
