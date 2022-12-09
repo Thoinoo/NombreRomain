@@ -67,61 +67,25 @@ namespace NombreRomain.test
             Assert.Equal(resultat, resultatAttendu);
         }
 
-        [Fact]
-        public void Test10()
+        [Theory]
+        [InlineData(10)]
+        [InlineData(11)]
+        [InlineData(12)]
+        [InlineData(13)]
+        public void Test10to13(int n)
         {
-            // ETANT DONNE le chiffre 10
-            var chiffre = 10;
+            // ETANT DONNE un nombre entre 10 et 13
+            var chiffre = n;
 
             // QUAND on l'envoi à convertir
             var resultat = Convertisseur.convertir(chiffre);
-            string resultatAttendu = new string("X");
+            string resultatAttendu = new string("X") + new string('I', n - 10);
 
-            // ALORS on obtient X
+            // ALORS on obtient X avec n-5 nombre de I
             Assert.Equal(resultat, resultatAttendu);
         }
 
-        [Fact]
-        public void Test11()
-        {
-            // ETANT DONNE le chiffre 11
-            var chiffre = 11;
 
-            // QUAND on l'envoi à convertir
-            var resultat = Convertisseur.convertir(chiffre);
-            string resultatAttendu = new string("XI");
-
-            // ALORS on obtient XI
-            Assert.Equal(resultat, resultatAttendu);
-        }
-
-        [Fact]
-        public void Test12()
-        {
-            // ETANT DONNE le chiffre 12
-            var chiffre = 12;
-
-            // QUAND on l'envoi à convertir
-            var resultat = Convertisseur.convertir(chiffre);
-            string resultatAttendu = new string("XII");
-
-            // ALORS on obtient XII
-            Assert.Equal(resultat, resultatAttendu);
-        }
-
-        [Fact]
-        public void Test13()
-        {
-            // ETANT DONNE le chiffre 13
-            var chiffre = 13;
-
-            // QUAND on l'envoi à convertir
-            var resultat = Convertisseur.convertir(chiffre);
-            string resultatAttendu = new string("XIII");
-
-            // ALORS on obtient XII
-            Assert.Equal(resultat, resultatAttendu);
-        }
 
 
 
