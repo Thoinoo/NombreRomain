@@ -23,7 +23,7 @@ namespace NombreRomain.test
         [Fact]
         public void Test4()
         {
-            // ETANT DONNE le le chiffre 4
+            // ETANT DONNE le chiffre 4
             var chiffre = 4;
 
             // QUAND on l'envoi à convertir
@@ -34,61 +34,24 @@ namespace NombreRomain.test
             Assert.Equal(resultat, resultatAttendu);
         }
 
-        [Fact]
-        public void Test5()
+        [Theory]
+        [InlineData(5)]
+        [InlineData(6)]
+        [InlineData(7)]
+        [InlineData(8)]
+        public void Test5to8(int n)
         {
-            // ETANT DONNE le le chiffre 5
-            var chiffre = 5;
+            // ETANT DONNE un chiffre entre 5 et 8
+            var chiffre = n;
 
             // QUAND on l'envoi à convertir
             var resultat = Convertisseur.convertir(chiffre);
-            string resultatAttendu = new string("V");
+            string resultatAttendu = new string("V") + new string('I', n - 5);
 
-            // ALORS on obtient V
+            // ALORS on obtient V avec n-5 nombre de I
             Assert.Equal(resultat, resultatAttendu);
         }
-
-        [Fact]
-        public void Test6()
-        {
-            // ETANT DONNE le le chiffre 6
-            var chiffre = 6;
-
-            // QUAND on l'envoi à convertir
-            var resultat = Convertisseur.convertir(chiffre);
-            string resultatAttendu = new string("VI");
-
-            // ALORS on obtient VI
-            Assert.Equal(resultat, resultatAttendu);
-        }
-
-        [Fact]
-        public void Test7()
-        {
-            // ETANT DONNE le le chiffre 7
-            var chiffre = 7;
-
-            // QUAND on l'envoi à convertir
-            var resultat = Convertisseur.convertir(chiffre);
-            string resultatAttendu = new string("VII");
-
-            // ALORS on obtient VII
-            Assert.Equal(resultat, resultatAttendu);
-        }
-
-        [Fact]
-        public void Test8()
-        {
-            // ETANT DONNE le le chiffre 8
-            var chiffre = 8;
-
-            // QUAND on l'envoi à convertir
-            var resultat = Convertisseur.convertir(chiffre);
-            string resultatAttendu = new string("VIII");
-
-            // ALORS on obtient VIII
-            Assert.Equal(resultat, resultatAttendu);
-        }
+        
 
     }
 }
