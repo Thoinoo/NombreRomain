@@ -72,7 +72,21 @@ namespace NombreRomain.test
             var resultat = Convertisseur.convertir(chiffre);
             string resultatAttendu = new string("VII");
 
-            // ALORS on obtient VI
+            // ALORS on obtient VII
+            Assert.Equal(resultat, resultatAttendu);
+        }
+
+        [Fact]
+        public void Test8()
+        {
+            // ETANT DONNE le le chiffre 8
+            var chiffre = 8;
+
+            // QUAND on l'envoi à convertir
+            var resultat = Convertisseur.convertir(chiffre);
+            string resultatAttendu = new string("VIII");
+
+            // ALORS on obtient VIII
             Assert.Equal(resultat, resultatAttendu);
         }
 
