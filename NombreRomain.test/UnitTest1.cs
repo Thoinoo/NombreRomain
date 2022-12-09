@@ -87,9 +87,21 @@ namespace NombreRomain.test
             Assert.Equal(resultat, resultatAttendu);
         }
 
+        [Fact]
+        public void Test19()
+        {
+            // ETANT DONNE le nombre 19
+            var chiffre = 19;
 
-        
-        
+            // QUAND on l'envoi à convertir
+            var resultat = Convertisseur.convertir(chiffre);
+            string resultatAttendu = "XIX";
+
+            // ALORS on obtient XIX
+            Assert.Equal(resultat, resultatAttendu);
+        }
+
+
 
 
 
