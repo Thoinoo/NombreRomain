@@ -19,6 +19,20 @@ namespace NombreRomain.test
             // ALORS on obtient n fois I
             Assert.Equal(resultat, resultatAttendu);
         }
-        
+
+        [Fact]
+        public void Test4()
+        {
+            // ETANT DONNE le le chiffre 4
+            var chiffre = 4;
+
+            // QUAND on l'envoi à convertir
+            var resultat = Convertisseur.convertir(chiffre);
+            string resultatAttendu = new string("IV");
+
+            // ALORS on obtient n fois I
+            Assert.Equal(resultat, resultatAttendu);
+        }
+
     }
 }

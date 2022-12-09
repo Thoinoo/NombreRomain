@@ -10,6 +10,11 @@
                 return new string('I', chiffre);
             }
 
+            if (chiffre == 4)
+            {
+                return "IV";
+            }
+
             return new NotImplementedException();
 
             
