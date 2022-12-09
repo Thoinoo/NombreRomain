@@ -81,6 +81,20 @@ namespace NombreRomain.test
             Assert.Equal(resultat, resultatAttendu);
         }
 
+        [Fact]
+        public void Test11()
+        {
+            // ETANT DONNE le chiffre 11
+            var chiffre = 11;
+
+            // QUAND on l'envoi à convertir
+            var resultat = Convertisseur.convertir(chiffre);
+            string resultatAttendu = new string("XI");
+
+            // ALORS on obtient XI
+            Assert.Equal(resultat, resultatAttendu);
+        }
+
 
 
 
