@@ -62,5 +62,19 @@ namespace NombreRomain.test
             Assert.Equal(resultat, resultatAttendu);
         }
 
+        [Fact]
+        public void Test7()
+        {
+            // ETANT DONNE le le chiffre 7
+            var chiffre = 7;
+
+            // QUAND on l'envoi à convertir
+            var resultat = Convertisseur.convertir(chiffre);
+            string resultatAttendu = new string("VII");
+
+            // ALORS on obtient VI
+            Assert.Equal(resultat, resultatAttendu);
+        }
+
     }
 }
