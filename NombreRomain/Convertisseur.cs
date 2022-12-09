@@ -2,19 +2,17 @@
 {
     public class Convertisseur
     {
-        public static object convertir(uint chiffre)
+        public static object convertir(int chiffre)
         {
-            switch (chiffre)
+
+            if (chiffre < 4)
             {
-                case 1:
-                    return "I";
-                case 2:
-                    return "II";
-                case 3:
-                    return "III";
-                default:
-                    return new NotImplementedException();
+                return new string('I', chiffre);
             }
+
+            return new NotImplementedException();
+
+            
             
         }
     }
