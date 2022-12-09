@@ -101,6 +101,19 @@ namespace NombreRomain.test
             // ALORS on obtient XXIV
             Assert.Equal(resultat, resultatAttendu);
         }
+        [Fact]
+        public void Test25()
+        {
+            // ETANT DONNE le nombre 25
+            var chiffre = 25;
+
+            // QUAND on l'envoi à convertir
+            var resultat = Convertisseur.convertir(chiffre);
+            string resultatAttendu = "XXV";
+
+            // ALORS on obtient XXV
+            Assert.Equal(resultat, resultatAttendu);
+        }
 
 
 
