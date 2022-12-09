@@ -129,6 +129,20 @@ namespace NombreRomain.test
             Assert.Equal(resultat, resultatAttendu);
         }
 
+        [Fact]
+        public void Test17()
+        {
+            // ETANT DONNE le nombre 17
+            var chiffre = 17;
+
+            // QUAND on l'envoi à convertir
+            var resultat = Convertisseur.convertir(chiffre);
+            string resultatAttendu = "XVII";
+
+            // ALORS on obtient XVII
+            Assert.Equal(resultat, resultatAttendu);
+        }
+
 
 
 
