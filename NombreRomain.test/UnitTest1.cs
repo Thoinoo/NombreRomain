@@ -1,7 +1,31 @@
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+
 namespace NombreRomain.test
 {
     public class UnitTest1
     {
+
+        private static IEnumerable<(int chiffre, string symbole)> Symboles => new[]
+        {
+            (5, "V"),
+            (10, "X")
+        };
+
+        public static IEnumerable<object[]> symboleAvecUnite = SymbolesAvecUnite();
+
+        public static IEnumerable<object[]> SymbolesAvecUnite()
+        {
+            foreach (var (chiffre, symbole) in Symboles)
+            {
+                yield return new object[] { chiffre, chiffre, symbole };
+                yield return new object[] { chiffre+1 , chiffre, symbole };
+                yield return new object[] { chiffre+2 , chiffre, symbole };
+                yield return new object[] { chiffre+3 , chiffre, symbole };
+            }
+        }
+
+
 
         [Theory]
         [InlineData(1)]
@@ -34,23 +58,6 @@ namespace NombreRomain.test
             Assert.Equal(resultat, resultatAttendu);
         }
 
-        [Theory]
-        [InlineData(5)]
-        [InlineData(6)]
-        [InlineData(7)]
-        [InlineData(8)]
-        public void Test5to8(int n)
-        {
-            // ETANT DONNE un chiffre entre 5 et 8
-            var chiffre = n;
-
-            // QUAND on l'envoi à convertir
-            var resultat = Convertisseur.convertir(chiffre);
-            string resultatAttendu = new string("V") + new string('I', n - 5);
-
-            // ALORS on obtient V avec n-5 nombre de I
-            Assert.Equal(resultat, resultatAttendu);
-        }
 
 
         [Fact]
@@ -67,21 +74,19 @@ namespace NombreRomain.test
             Assert.Equal(resultat, resultatAttendu);
         }
 
+
         [Theory]
-        [InlineData(10)]
-        [InlineData(11)]
-        [InlineData(12)]
-        [InlineData(13)]
-        public void Test10to13(int n)
+        [MemberData(nameof(symboleAvecUnite))]
+        public void TestSymboles(int chiffreATester, int valeurSansUnite , string SymboleSansUnite)
         {
-            // ETANT DONNE un nombre entre 10 et 13
-            var chiffre = n;
+            // ETANT DONNE un nombre entre multiple de 5 auquel on a ajoute 0, 1, 2 ou 3
+            var chiffre = chiffreATester;
 
             // QUAND on l'envoi à convertir
             var resultat = Convertisseur.convertir(chiffre);
-            string resultatAttendu = new string("X") + new string('I', n - 10);
+            string resultatAttendu = new string(SymboleSansUnite) + new string('I', chiffreATester - valeurSansUnite);
 
-            // ALORS on obtient X avec n-5 nombre de I
+            // ALORS on obtient son symbole sans unité, auquel on ajoute ( valeur - valeur sans unité ) fois I
             Assert.Equal(resultat, resultatAttendu);
         }
 
