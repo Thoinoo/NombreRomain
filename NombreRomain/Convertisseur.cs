@@ -22,6 +22,7 @@ namespace NombreRomain
                 <= 23 => "XX" + new string('I', chiffre - 20),
                 24 => "XXIV",
                 25 => "XXV",
+                26 => "XXVI",
                 _ => new NotImplementedException()
             };
         }
