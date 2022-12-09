@@ -24,6 +24,7 @@ namespace NombreRomain
                 25 => "XXV",
                 26 => "XXVI",
                 27 => "XXVII",
+                28 => "XXVIII",
                 _ => new NotImplementedException()
             };
         }
