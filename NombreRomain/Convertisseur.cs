@@ -4,19 +4,14 @@
     {
         public static object convertir(int chiffre)
         {
+            
 
-            if (chiffre < 4)
-            {
-                return new string('I', chiffre);
-            }
 
             return chiffre switch
             {
+                <= 3 => new string('I', chiffre),
                 4 => "IV",
-                5 => "V",
-                6 => "VI",
-                7 => "VII",
-                8 => "VIII",
+                <= 8 => "V" + new string('I', chiffre - 5),
                 9=> "IX",
                 _ => new NotImplementedException()
             };
