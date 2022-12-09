@@ -97,7 +97,21 @@ namespace NombreRomain.test
             var resultat = Convertisseur.convertir(chiffre);
             string resultatAttendu = "XIV";
 
-            // ALORS on obtient son symbole sans unité, auquel on ajoute ( valeur - valeur sans unité ) fois I
+            // ALORS on obtient XIV
+            Assert.Equal(resultat, resultatAttendu);
+        }
+
+        [Fact]
+        public void Test15()
+        {
+            // ETANT DONNE le nombre 15
+            var chiffre = 15;
+
+            // QUAND on l'envoi à convertir
+            var resultat = Convertisseur.convertir(chiffre);
+            string resultatAttendu = "XV";
+
+            // ALORS on obtient XV
             Assert.Equal(resultat, resultatAttendu);
         }
 
