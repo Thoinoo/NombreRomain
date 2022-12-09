@@ -13,7 +13,9 @@ namespace NombreRomain.test
             (10, "X"),
             (15, "XV"),
             (20, "XX"),
-            (25, "XXV")
+            (25, "XXV"),
+            (30, "XXX"),
+            (35, "XXXV")
         };
 
         public static IEnumerable<object[]> symboleAvecUnite = SymbolesAvecUnite();
@@ -88,34 +90,7 @@ namespace NombreRomain.test
             // ALORS on obtient son symbole sans unité, auquel on ajoute ( valeur - valeur sans unité ) fois I
             Assert.Equal(resultat, resultatAttendu);
         }
-
-        [Fact]
-        public void Test29()
-        {
-            // ETANT DONNE le nombre 29
-            var chiffre = 29;
-
-            // QUAND on l'envoi à convertir
-            var resultat = Convertisseur.convertir(chiffre);
-            string resultatAttendu = "XXIX";
-
-            // ALORS on obtient XXIX
-            Assert.Equal(resultat, resultatAttendu);
-        }
-
-        [Fact]
-        public void Test30()
-        {
-            // ETANT DONNE le nombre 30
-            var chiffre = 30;
-
-            // QUAND on l'envoi à convertir
-            var resultat = Convertisseur.convertir(chiffre);
-            string resultatAttendu = "XXX";
-
-            // ALORS on obtient XXX
-            Assert.Equal(resultat, resultatAttendu);
-        }
+        
 
 
 
