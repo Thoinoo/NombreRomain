@@ -7,7 +7,7 @@ namespace NombreRomain
         public static object convertir(int chiffre)
         {
             
-
+            return Unite.getSymbole(chiffre);
 
             return chiffre switch
             {
