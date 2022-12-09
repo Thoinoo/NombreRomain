@@ -88,19 +88,7 @@ namespace NombreRomain.test
         }
 
 
-        [Fact]
-        public void Test14()
-        {
-            // ETANT DONNE le nombre 14
-            var chiffre = 14;
-
-            // QUAND on l'envoi à convertir
-            var resultat = Convertisseur.convertir(chiffre);
-            string resultatAttendu = "XIV";
-
-            // ALORS on obtient XIV
-            Assert.Equal(resultat, resultatAttendu);
-        }
+        
         
 
 
